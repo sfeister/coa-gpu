@@ -34,6 +34,7 @@ Upon completing this laboratory, students will:
 ## Pre-Work (Three Weeks in Advance)
 You will complete the following pre-work in class, three weeks in advance of the lab day.
 
+
 ### Apply for a NERSC Account (15 minutes)
 
 Later this semester, I am going to have everyone in the class access a supercomputer to complete labs relating to parallel processors and GPU computing. I have an award of supercomputing time granted to me from a [government-funded national supercomputer center](https://www.nersc.gov/). This center, called NERSC, is located in San Francisco. We will likely be accessing limited numbers of computing nodes on the [Perlmutter supercomputer](https://www.nersc.gov/systems/perlmutter/). You can [read about the architecture here](https://docs.nersc.gov/systems/perlmutter/architecture/).
@@ -43,6 +44,9 @@ Note from NERSC staff, before proceeding:
 > Your account will undergo user vetting, in accordance with NERSC policies, to verify your identity. Under some circumstances, there could be a delay of up to a week while this vetting takes place.
 
 NERSC representatives have assured me this user vetting is lighter than a typical background check, and importantly, does not involve investigation of immigration status. Please reach out to me directly if you'd like more details before proceeding, and I will find out more.
+
+
+<section>
 
 #### Step-by-Step: Apply for a NERSC Account
 Here's how students enrolled in COMP 262 at CSUCI can sign up for an account at NERSC:
@@ -67,6 +71,8 @@ After you're done, there will be a security vetting step that may take a couple 
 #### Submit: A Screenshot of Application (Due During Class Period)
 Submit a screenshot of your confirmation email showing you have signed up for an account at NERSC.
 
+</section>
+
 ## Pre-Work (Two Weeks in Advance)
 You will complete the following pre-work in class, two weeks in advance of the lab day.
 
@@ -79,8 +85,9 @@ Several days after your initial application for a NERSC account (last week's pre
 The password reset process takes about an hour, if you do forget, then reset your password, wait an hour, then try logging in again.
 
 ### Enable Multi-Factor Authentication for Your NERSC Account (10 minutes)
-
 The tools we will be using at NERSC requires you user account to have multi-factor authentication (MFA) enabled. In this section of pre-work, you'll enable and test multi-factor authentication. You'll need your mobile phone for this pre-work, as it involves installing an app.
+
+<section>
 
 #### Step-by-Step: Enable Multi-Factor Authentication (MFA)
 You'll install an authenticator app on your phone, and use that app to get a unique "one-time password" (OTP), or "token", each time you login to NERSC. This token is in addition to your regular NERSC password.
@@ -91,12 +98,16 @@ You'll install an authenticator app on your phone, and use that app to get a uni
 #### Submit: Evidence that MFA is Enabled (Due During Class Period)
 Submit a screenshot [showing a successful test of using your token](https://docs.nersc.gov/connect/mfa/#testing-your-new-token).
 
+</section>
+
 
 ## Pre-Work (One Week in Advance)
 You will complete the following pre-work in class, one week in advance of the lab day.
 
 ### (In-Class) Demonstrate Account Login (5 minutes)
 In this pre-work, you will verify that are able to log into NERSC and ready for next week's lab.
+
+<section>
 
 #### Step-by-Step: Log into NERSC Jupyter Hub
 
@@ -108,7 +119,9 @@ In this pre-work, you will verify that are able to log into NERSC and ready for 
 #### Show Me: Successful Login
 5.  Upon successful login, show your teacher the completed login screen, and then you can logout again.
 
-### (At-Home) Introductory Videos, Readings, and Reflection (2 hours)
+</section>
+
+### (At-Home) Introductory Videos (30 minutes)
 In this extensive pre-work, you will watch videos about NERSC and careers in High Performance Computing (HPC). You will then learn about the specifics of the NVIDIA GPU hardware we will use next week. These videos and readings will give you context for possible careers you may never have considered, and will also help you get the most value out of our lab next week.
 
 Once you've watched the videos and completed all readings, you will submit a brief reflection and share this reflection with your classmates.
@@ -129,21 +142,11 @@ But what exactly is a supercomputer? Please watch a video introduction to superc
 
 !?[What is a Supercomputer? (Lawrence Livermore National Laboratory)](https://www.youtube.com/watch?v=9M99STmu-vI)
 
-##### (Optional) Dig deeper with these additional videos:
-
-The following videos are optional, if you'd like to dig deeper! You can also come back to these later.
-
-!?[Go on a Tour of a Supercomputer! (University of Wisconsin-Eau Claire)](https://www.youtube.com/watch?v=uxYX8KXdC0g)
-
-!?[What is a Supercomputer? (Argonne National Laboratory)](https://www.youtube.com/watch?v=4xHoWwxdlms)
-
-Visit the [NERSC YouTube page](https://www.youtube.com/@theRealNERSC) for a lot more videos specific to Perlmutter, the supercomputer you'll be using in class!
-
-If you want to dive really deep and are considering exploring a career in HPC: here's a [three-hour crash course in supercomputing](https://www.youtube.com/watch?v=sVLhWWOxjdo&list=PL20S5EeApOSvQK4rPN53MR3EVWN10KULp) from the staff at NERSC. You can actually meet these people if you'd like! Just ask me for their contact information and I'll put you in touch.
-
 #### Watch: Careers in HPC for Computer Scientists
 
 Computer science degrees are valuable and lead to many careers in HPC. Choose **just one video** below to watch, which represent three examples of careers in HPC!
+
+<section>
 
 #### Video Option A: I/O Specialist
 !?[Careers in HPC: I/O Specialist Elsa Gonsiorowski, Lawrence Livermore National Laboratory, USA](https://www.youtube.com/watch?v=UzlP0w-BWZo)
@@ -153,6 +156,21 @@ Computer science degrees are valuable and lead to many careers in HPC. Choose **
 
 #### Video Option C: Application Developer and Outreach
 !?[Careers in HPC: Application Developer, HPC Education & Outreach, Weronika Filinger, EPCC, UK](https://www.youtube.com/watch?v=XAfyQjZNAmM)
+
+</section>
+
+#### (Optional) Dig deeper with these additional resources and videos:
+
+You've now completed your pre-work!
+
+The following resources are optional, only if you'd like to dig deeper. You can also come back to these later.
+
+1. Visit the [NERSC YouTube page](https://www.youtube.com/@theRealNERSC) for a lot more videos specific to Perlmutter, the supercomputer you'll be using in class!
+2. [Video: Go on a Tour of a Supercomputer! (University of Wisconsin-Eau Claire)](https://www.youtube.com/watch?v=uxYX8KXdC0g)
+3. [Video: What is a Supercomputer? (Argonne National Laboratory)](https://www.youtube.com/watch?v=4xHoWwxdlms)
+4. If you want to dive really deep and are considering exploring a career in HPC: here's a [three-hour crash course in supercomputing](https://www.youtube.com/watch?v=sVLhWWOxjdo&list=PL20S5EeApOSvQK4rPN53MR3EVWN10KULp) from the staff at NERSC. You can actually meet these people if you'd like! Just ask me for their contact information and I'll put you in touch.
+
+### (At-Home) Readings on GPUs and Massive Parallelism
 
 #### Case Study: NVIDIA A100 GPUs
 NERSC Perlmutter contains **7,208 NVIDIA A100 GPUs**.
@@ -186,12 +204,19 @@ Learn More:
 2. [NVIDIA A100 PDF](https://images.nvidia.com/aem-dam/en-zz/Solutions/data-center/nvidia-ampere-architecture-whitepaper.pdf)
 2. [Introducing NVIDIA HGXA100](https://developer.nvidia.com/blog/introducing-hgx-a100-most-powerful-accelerated-server-platform-for-ai-hpc/)
 
-#### Submit (Due the Day Before Lab): Brief Written Reflection on Videos
+### (At-Home) Write and Submit: Reflection
+
+** Submit (Due the Day Before Lab): Brief Written Reflection on Videos **
+
 Submit a brief reflection on what you just watched and read. What interested you? What surprised you? Elaborate.
 
 Share this reflection on Padlet with your class (TODO) prior to the lab period.
 
-## Introduction
+## (Laboratory Day-Of) Introduction
+
+Today's lab will begin with activities and lecture introducing you to the day. For your reference, here is an outline of this introductory session. You will be an active participant as we work through this agenda in class together!
+
+<section>
 
 ### Activity: Conversation starter
 “What did you find surprising? What careers did you see there?”
@@ -213,10 +238,16 @@ Lecture outline:
 ### Post-Lecture Activities:
 Show a GPU, does this go in a server? In a laptop? In a data center?
 
-
 Show off some GPU chip die shots from Wikichip, try to pick out the GPU.
 
+</section>
+
 ## Access a GPU on NERSC
+
+Now that the class introduction to today's lab is complete, you will log into the NERSC supercomputer and access one of its A100 GPUs for today's lab. You'll access the supercomputer through a portal they provide, called the "NERSC Jupyter Hub".
+
+The following slides will walk you through getting connected in a step-by-step fashion. Please follow these instructions individually from start to finish.
+
 ### Log into NERSC Jupyter Hub
 
 1.  Navigate in a web browser to the [NERSC Jupyter Hub](https://jupyter.nersc.gov).
@@ -269,7 +300,55 @@ Tue Aug  8 10:16:44 2023
 
 10. (Optional) If you want to see even more detailed stats on your GPU, try typing "nvidia-smi -q" and then press "Enter".
 
+### Transition to Basics of Terminal
+
+Congratulations! You have now completed the section of accessing the NERSC supercomputer A100 GPU. You may now move forward into the next section, where you will pick up basics of the Linux terminal that you'll need for today's lab.
+
+
+## Background Skills: Linux Terminal Basics
+
+When we remotely access a computer, it's typical to interact with it using a Linux terminal. Keep the following resources handy throughout the lab period, by opening each in a new tab. I picked these resources out specifically for their simplicity and beginner-friendly approach.
+
+1. [Some basic Linux commands which we can use in the terminal](http://www.cs.umd.edu/~nelson/classes/resources/BasicLinux.shtml) for this lab period. Open it in a new tab and keep it handy!
+2. [Compiling C Programs with GCC](https://www.wikihow.com/Compile-a-C-Program-Using-the-GNU-Compiler-(GCC))
+
+Note that another compiler, "nvcc", is invoked in a similar way to "gcc". Use "gcc" to compile pure C code, and use "nvcc" to compile GPU code for NVIDIA GPUs.
+
+Now that you have your basics of the Linux terminal ready, you'll start by running a "Hello, World" on a CPU, then you'll move your "Hello, World" program to a GPU.
+
+## Hello World on your CPU
+
+#### Create your C code using JupyterHub File browser
+
+You may need teacher help to follow along with these steps. I will lead you through this section as a class.
+
+1. In the left-hand panel of JupyterHub, move your cursor under the header of "File Browser".
+2. Right click anywhere within the File Browser section to open a drop-down menu with options for creating elements. In that menu, select "New folder".
+3. Name your folder something like "GPULab".
+4. Navigate into your newly-created folder by double-clicking it.
+5. Now that you've navigated into your new folder, right click again anywhere within the File Browser section to open the same drop-down menu. This time, in that menu, select "New File".
+6. Name your new file "hello.c". (Note, you'll need to delete the ".txt" extension -- in other words, name your file "hello.c", not "hello.c.txt").
+7. Finally, within the File Browser, double click on your newly-created "hello.c" file to open and edit it within a new text editing tab of Jupyter Hub.
+8. Paste the following contents into your file, edit it to change "Hello, world" to something more fun like "Hello, Scott!", and save your new file.
+
+```c
+void c_hello(){
+    printf("Hello World!\n");
+}
+
+int main() {
+    c_hello();
+    return 0;
+}
+```
+
+#### Compile your C code using JupyterHub Linux terminal
+
+Compile your c file from the terminal using gcc. Refer to the tips from the "Linux Terminal Basics" sections before!
+
 ## Hello World on your GPU
+In this section, you will get a simple computer program running on your NERSC A100 GPU.
+
 ### What is CUDA?
 
 Watch the two video below to answer the question: "What is CUDA?", and even give an introduction to how it works.
@@ -281,6 +360,7 @@ Watch the two video below to answer the question: "What is CUDA?", and even give
 ### (Optional, something for later) Follow a CUDA Tutorial
 
 Here are some CUDA tutorials to help you learn more.
+
 1. Easiest: ["CUDA Tutorial" on ReadtheDocs, by Putt Sakdhnagool](https://cuda-tutorial.readthedocs.io/en/latest/)
 2. More in-Depth: ["An Even Easier Introduction to CUDA", by Mark Harris](https://developer.nvidia.com/blog/even-easier-introduction-cuda/)
 3. Even More-in-Depth: ["CUDA Pro Tip: Write Flexible Kernels with Grid-Stride Loops", by Mark Harris](https://developer.nvidia.com/blog/cuda-pro-tip-write-flexible-kernels-grid-stride-loops/)
@@ -289,7 +369,7 @@ I use the above as references in the next few sections, including copying some c
 
 You may wish to come back and follow these tutorials about CUDA on your own time, later. For now, proceed to the next page. Remember as you go, you can come back here later for more depth.
 
-### Hello World
+### Hello World on your CPU
 
 #### Create a project folder
 
@@ -315,19 +395,6 @@ int main() {
 ```
 
 9. Compile your c file from the terminal.
-
-## Background Skills
-a.	Intro to why you need these: Programming a GPU on a cluster, NERSC
-b.	Diagram: here’s what we’ll do:
-i.	Our computer  Login to remote machine  Do work on remote machine  Copy results back to our machine
-c.	Uses something called Linux shell. Here are some key skills:
-i.	(Give them a cheat sheet with limited options to go along with this)
-ii.	mkdir, cd (Activity for practice, turn something simple in)
-iii.	all about flags
-iv.	gcc
-v.	nvcc
-d.	Cheat sheet tailored to the activity itself – only the stuff for the lab
-
 
 ## Primary Activity: Create an Algorithm
 
@@ -356,7 +423,6 @@ Make their encryption more elaborate, run again and re-benchmark
 ## Reflection Activities
 
 ### Shared memory reflection activity
-(TODO: Needs significant improvement)
 
 Activity: Doing laundry at home versus hiring a laundry service
 1.	Which is probably faster at doing each load?
