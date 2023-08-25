@@ -396,7 +396,7 @@ int main() {
 
 9. Compile your c file from the terminal.
 
-## Primary Activity: Create an Algorithm
+## Create an Algorithm
 
 ### Activity Overview
 a.	Create a simple algorithm for encrypting data
@@ -409,15 +409,17 @@ b.	Show them my encryption
 i.	Show them how I move it to the GPU
 c.	Check that the results are still the same as they were
 
-### Move Algorithm onto GPU
+### Write and Run Your Algorithm on the CPU
+
+### Move Your Algorithm onto GPU
 
 1. Open a shared GPU node
 TODO
 
-### Run Benchmarks
+### Run Benchmarks on the CPU vs. GPU implementations
 Run benchmarks (Holy cow! Computation took almost no time, and data took so much time)
 
-### Improve and Re-Run Benchmarks
+### Increase Algorithm Computation Load and Re-Run Benchmarks
 Make their encryption more elaborate, run again and re-benchmark
 
 ## Reflection Activities
