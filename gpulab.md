@@ -24,6 +24,7 @@ In this lab, we will design a simple data encryption algorithm and implement it 
 
 Upon completing this laboratory, students will:
 
+* Explore careers in High Performance Computing (HPC) with relevance to a Computer Science degree
 * Examine separation of GPU memory caches and CPU memory caches (So data transfer across the bus is needed at some step even if the CPU has already been working on the data)
 * Examine differences in generality CPU instruction sets and GPU instruction sets
 * Demonstrate the massive parallelism of a GPU through kernel-level computer programming
@@ -242,7 +243,7 @@ Show off some GPU chip die shots from Wikichip, try to pick out the GPU.
 
 </section>
 
-## Access a GPU on NERSC
+## Remotely Access NERSC JupyterHub and Linux Terminal
 
 Now that the class introduction to today's lab is complete, you will log into the NERSC supercomputer and access one of its A100 GPUs for today's lab. You'll access the supercomputer through a portal they provide, called the "NERSC Jupyter Hub".
 
@@ -262,8 +263,82 @@ The following slides will walk you through getting connected in a step-by-step f
 ### Launch "Terminal"
 7. From the "Launcher", scroll down all the way to the "Other" section, and select "Terminal". This will open a Linux terminal window, logged into Perlmutter.
 
-### Examine your GPU from the terminal
-8. From the terminal, type "nvidia-smi -L" and press Enter. (Note: Capitalization matters in the terminal.) You will see the model of the GPU for the machine you are currently accessing.
+### Transition to Basics of Terminal
+
+Congratulations! You have now launched a Linux Terminal that's running on a supercomputer in San Francisco. Anything you type into this terminal window is run on a single node of the NERSC Perlmutter supercomputer. You may now move forward into the next section, where you will pick up the smallest number of basics of the Linux Terminal that you'll need to complete the rest of today's activities.
+
+## Linux Terminal Basics
+
+When we remotely access a computer, it's typical to interact with it using a Linux terminal. Keep the following resources handy throughout the lab period, by opening each in a new tab. I picked these resources out specifically for their simplicity and beginner-friendly approach.
+
+1. [Some basic Linux commands which we can use in the terminal](http://www.cs.umd.edu/~nelson/classes/resources/BasicLinux.shtml) for this lab period. Open it in a new tab and keep it handy!
+2. [Compiling C Programs with GCC](https://www.wikihow.com/Compile-a-C-Program-Using-the-GNU-Compiler-(GCC))
+
+Note that another compiler, "nvcc", is invoked in a similar way to "gcc". Use "gcc" to compile pure C code, and use "nvcc" to compile GPU code for NVIDIA GPUs.
+
+Now that you have your basics of the Linux terminal ready, you'll start by running a "Hello, World" on a CPU, then you'll move your "Hello, World" program to a GPU.
+
+## Run "Hello, World" on a Perlmutter CPU
+
+You may need teacher help to follow along with these steps. I will lead you through this section as a class.
+
+<section>
+
+#### Create a project folder
+
+1. In the left-hand panel of JupyterHub, move your cursor under the header of "File Browser".
+2. Right click anywhere within the File Browser section to open a drop-down menu with options for creating elements. In that menu, select "New folder".
+3. Name your folder something like "GPULab".
+4. Navigate into your newly-created folder by double-clicking it.
+
+#### Create a new file named "hello.c" in your project folder
+
+5. Now that you've navigated into your new folder, right click again anywhere within the File Browser section to open the same drop-down menu. This time, in that menu, select "New File".
+6. Name your new file "hello.c". (Note, you'll need to delete the ".txt" extension -- in other words, name your file "hello.c", not "hello.c.txt").
+
+#### Write C code your "hello.c" file using the File Browser's text editor
+
+7. Finally, within the File Browser, double click on your newly-created "hello.c" file to open and edit it within a new text editing tab of Jupyter Hub.
+8. Paste the following contents into your file, edit it to change "Hello, world" to something more fun like "Hello, Scott!", and save your new file.
+
+```c
+void c_hello(){
+    printf("Hello World!\n");
+}
+
+int main() {
+    c_hello();
+    return 0;
+}
+```
+
+#### Open a Linux Terminal on NERSC and navigate to your project folder
+
+9. From JupyterHub, launch a new Terminal tab. That is, create a new Launcher tab, then scroll down and select "Terminal". This will give you access to a private Linux Terminal, from your web browser, running on one of the login servers (login nodes) of the NERSC Perlmutter supercomputer.
+10. You start in the Linux Terminal in your "Home" folder, which is represented by a tilde (~). From the Linux Terminal, navigate to your project folder.
+11. You'll use the `ls` command you learned earlier to see what's in the current folder. Try it out now.
+12. You'll see the `cd` command to navigate into your project folder. For example, if using `ls` you see your project folder called "GPULab", then navigate into that folder by typing `cd GPULab`.
+13. Confirm you are in your project folder by examining the path to left of your cursor. It should now show `~/GPULab`.
+14. Confirm that your file, "hello.c" is in your project folder, by typing `ls`. You should see "hello.c" listed.
+15. Confirm the contents of your file are as you desired, by typing `cat hello.c`, which will display the contents of your file within the Linux Terminal.
+
+#### Compile and run your "hello.c" program from the Linux Terminal on NERSC
+
+16. Compile your "hello.c" file from the terminal using gcc. To do this, type `gcc hello.c -o hello.o`. This syntax will compile hello.c into an executable file named "hello.o".
+17. Confirm that you've created your executable, by typing `ls` to show folder contents. You should now see "hello.c" and "hello.o" both listed in your folder contents.
+18. Run your "hello.o" executable, by typing `./hello.o`. You should see "Hello, World!" or equivalent printed out.
+
+</section>
+
+## Submit: Evidence of Hello, World on Perlmutter CPU
+For teacher verification that you've completed this step, submit a screenshot that includes your "Hello, world" terminal output running on NERSC Perlmutter.
+
+## Re-write "Hello, World" for a Perlmutter GPU
+Now that you've successfully run Hello, World on a CPU of Perlmutter, you'll modify your C code to run also utilize a GPU of Perlmutter. In this section, you will get a simple computer program running on one of your Perlmutter node's A100 GPU.
+
+### Examine one of your node's GPU using the Linux Terminal
+
+From a NERSC Perlmutter Linux Terminal, type "nvidia-smi -L" and press Enter. (Note: Capitalization matters in the terminal.) You will see the model of the GPU assigned to you, for the Perlmutter node you are currently accessing.
 
 ```
 sfeister@nid001045:/global/u1/s/sfeister> nvidia-smi -L
@@ -272,7 +347,7 @@ GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-893f36ab-1e28-a964-f03d-38d5b163e038)
 
 As you can see from the output above, you are using the NVIDIA A100 GPU that you watched videos and read about earlier in this lab.
 
-9. After you've confirmed your GPU, you can see more stats about its current status. Type "nvidia-smi" (with no flags) and press Enter. You will see more stats for the GPU for the machine you are currently accessing.
+After you've confirmed your GPU, you can see more stats about its current status. Type "nvidia-smi" (with no flags) and press Enter. You will see more stats for the GPU for the machine you are currently accessing.
 
 ``` 
 sfeister@nid001045:/global/u1/s/sfeister> nvidia-smi
@@ -298,58 +373,11 @@ Tue Aug  8 10:16:44 2023
 +-----------------------------------------------------------------------------+
 ```
 
-10. (Optional) If you want to see even more detailed stats on your GPU, try typing "nvidia-smi -q" and then press "Enter".
+(Optional) If you want to see even more detailed stats on your GPU, try typing "nvidia-smi -q" and then press "Enter".
 
-### Transition to Basics of Terminal
+Now that you've looked at your GPU stats, it's time to write a computer program to run on the GPU. You'll be using a language similar to C, called CUDA.
 
-Congratulations! You have now completed the section of accessing the NERSC supercomputer A100 GPU. You may now move forward into the next section, where you will pick up basics of the Linux terminal that you'll need for today's lab.
-
-
-## Background Skills: Linux Terminal Basics
-
-When we remotely access a computer, it's typical to interact with it using a Linux terminal. Keep the following resources handy throughout the lab period, by opening each in a new tab. I picked these resources out specifically for their simplicity and beginner-friendly approach.
-
-1. [Some basic Linux commands which we can use in the terminal](http://www.cs.umd.edu/~nelson/classes/resources/BasicLinux.shtml) for this lab period. Open it in a new tab and keep it handy!
-2. [Compiling C Programs with GCC](https://www.wikihow.com/Compile-a-C-Program-Using-the-GNU-Compiler-(GCC))
-
-Note that another compiler, "nvcc", is invoked in a similar way to "gcc". Use "gcc" to compile pure C code, and use "nvcc" to compile GPU code for NVIDIA GPUs.
-
-Now that you have your basics of the Linux terminal ready, you'll start by running a "Hello, World" on a CPU, then you'll move your "Hello, World" program to a GPU.
-
-## Hello World on your CPU
-
-#### Create your C code using JupyterHub File browser
-
-You may need teacher help to follow along with these steps. I will lead you through this section as a class.
-
-1. In the left-hand panel of JupyterHub, move your cursor under the header of "File Browser".
-2. Right click anywhere within the File Browser section to open a drop-down menu with options for creating elements. In that menu, select "New folder".
-3. Name your folder something like "GPULab".
-4. Navigate into your newly-created folder by double-clicking it.
-5. Now that you've navigated into your new folder, right click again anywhere within the File Browser section to open the same drop-down menu. This time, in that menu, select "New File".
-6. Name your new file "hello.c". (Note, you'll need to delete the ".txt" extension -- in other words, name your file "hello.c", not "hello.c.txt").
-7. Finally, within the File Browser, double click on your newly-created "hello.c" file to open and edit it within a new text editing tab of Jupyter Hub.
-8. Paste the following contents into your file, edit it to change "Hello, world" to something more fun like "Hello, Scott!", and save your new file.
-
-```c
-void c_hello(){
-    printf("Hello World!\n");
-}
-
-int main() {
-    c_hello();
-    return 0;
-}
-```
-
-#### Compile your C code using JupyterHub Linux terminal
-
-Compile your c file from the terminal using gcc. Refer to the tips from the "Linux Terminal Basics" sections before!
-
-## Hello World on your GPU
-In this section, you will get a simple computer program running on your NERSC A100 GPU.
-
-### What is CUDA?
+### Adapting C Code to Run on GPUs: What is CUDA?
 
 Watch the two video below to answer the question: "What is CUDA?", and even give an introduction to how it works.
 
@@ -357,9 +385,11 @@ Watch the two video below to answer the question: "What is CUDA?", and even give
 
 !?[Intro to CUDA, Intro to CUDA - An introduction, how-to, to NVIDIA's GPU parallel programming architecture (5 minutes)](https://www.youtube.com/watch?v=IzU4AVcMFys)
 
-### (Optional, something for later) Follow a CUDA Tutorial
+<section>
 
-Here are some CUDA tutorials to help you learn more.
+#### (Something for later, not right now) Follow a CUDA Tutorial
+
+If you want to come back and dig deeper later, here are some CUDA tutorials to help you learn more.
 
 1. Easiest: ["CUDA Tutorial" on ReadtheDocs, by Putt Sakdhnagool](https://cuda-tutorial.readthedocs.io/en/latest/)
 2. More in-Depth: ["An Even Easier Introduction to CUDA", by Mark Harris](https://developer.nvidia.com/blog/even-easier-introduction-cuda/)
@@ -367,42 +397,57 @@ Here are some CUDA tutorials to help you learn more.
 
 I use the above as references in the next few sections, including copying some code exactly from those tutorials.
 
-You may wish to come back and follow these tutorials about CUDA on your own time, later. For now, proceed to the next page. Remember as you go, you can come back here later for more depth.
+You may wish to come back and follow these tutorials about CUDA on your own time, later. For now, proceed to the next page.
 
-### Hello World on your CPU
+</section>
 
-#### Create a project folder
+## Write CUDA Code that Prints "Hello, World!" messages from a GPU
 
-You may need teacher help to follow along with these steps. I will lead you through this section as a class.
-1. In the left-hand panel of JupyterHub, move your cursor under the header of "File Browser".
-2. Right click anywhere within the File Browser section to open a drop-down menu with options for creating elements. In that menu, select "New folder".
-3. Name your folder something like "GPULab".
-4. Navigate into your newly-created folder by double-clicking it.
-5. Now that you've navigated into your new folder, right click again anywhere within the File Browser section to open the same drop-down menu. This time, in that menu, select "New File".
-6. Name your new file "hello.c". (Note, you'll need to delete the ".txt" extension -- in other words, name your file "hello.c", not "hello.c.txt").
-7. Finally, within the File Browser, double click on your newly-created "hello.c" file to open and edit it within a new text editing tab of Jupyter Hub.
-8. Paste the following contents into your file, edit it to change "Hello, world" to something more fun like "Hello, Scott!", and save your new file.
+### This code will run on a single SM of the A100 GPU.
 
-```c
-void c_hello(){
-    printf("Hello World!\n");
-}
+1. From the JupyterHub File Browser, create a new file "hello1.cu" in your project folder. Note: the ".cu" extension is for CUDA code.
+2. From the JupyterHub File Browser, edit your new file "hello1.cu", just like you did to edit "hello.c". Copy the following CUDA code into your file and save it.
 
-int main() {
-    c_hello();
-    return 0;
-}
-```
+TODO: add CUDA code that goes here
 
-9. Compile your c file from the terminal.
+3. From the Linux Terminal, navigate back into your project folder and confirming your new file is there using `ls`.
+4. Compile your CUDA code with `nvcc hello1.cu -o hello1.o`.
+5. Run your CUDA program with `./hello1.o`. It should print out Hello, world from one of the SMs on your A100 GPU.
+
+### This code will run on all SMs of the A100 GPU.
+
+1. From the JupyterHub File Browser, create a new file "hello2.cu" in your project folder.
+2. From the JupyterHub File Browser, edit your new file "hello2.cu", just like you did to edit "hello1.cu". Copy the following CUDA code into your file and save it.
+
+TODO: add CUDA code that goes here
+
+3. From the Linux Terminal, navigate back into your project folder and confirming your new file is there using `ls`.
+4. Compile your CUDA code with `nvcc hello2.cu -o hello2.o`.
+5. Run your CUDA program with `./hello2.o`. It should print out Hello, world from each of the SMs on your A100 GPU.
+
+### This code will run on every single thread of every single SMs of the A100 GPU.
+
+1. From the JupyterHub File Browser, create a new file "hello3.cu" in your project folder.
+2. From the JupyterHub File Browser, edit your new file "hello3.cu". Copy the following CUDA code into your file and save it.
+
+TODO: add CUDA code that goes here
+
+3. From the Linux Terminal, navigate back into your project folder and confirming your new file is there using `ls`.
+4. Compile your CUDA code with `nvcc hello3.cu -o hello3.o`.
+5. Run your CUDA program with `./hello3.o`. It should print out Hello, world from each of the SMs on your A100 GPU.
+
+## Submit: Evidence of Hello, World on Perlmutter GPU
+For teacher verification that you've completed this step, submit a screenshot that includes your final "Hello, world" CUDA code ("hello3.cu") terminal output, running on NERSC Perlmutter GPU. Since there's so much output from this program, it's ok to just include just the output that fits in your screenshot.
 
 ## Create an Algorithm
 
 ### Activity Overview
+
 a.	Create a simple algorithm for encrypting data
 b.	Activity in C – write an encryption and decryption
 
 ### Lecture: How do you move something onto a GPU?
+
 a.	Show off a diagram of how we pull it in, send it back out data-wise
 i.	Discussion activity: Why do we do this?
 b.	Show them my encryption
@@ -419,10 +464,10 @@ TODO
 ### Run Benchmarks on the CPU vs. GPU implementations
 Run benchmarks (Holy cow! Computation took almost no time, and data took so much time)
 
-### Increase Algorithm Computation Load and Re-Run Benchmarks
+## Increase Algorithm Computation Load and Re-Run Benchmarks
 Make their encryption more elaborate, run again and re-benchmark
 
-## Reflection Activities
+## End-of-Class Discussion and Reflection
 
 ### Shared memory reflection activity
 
