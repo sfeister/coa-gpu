@@ -85,7 +85,7 @@ Several days after your initial application for a NERSC account (last week's pre
 Choose a new password and write it down somewhere you'll remember. **Leave the "MFA" field blank** as you haven't set up MFA yet (you'll do that after setting your password.)
 
 **Note: Make Sure to Write Down your NERSC Password**
-The password reset process takes about an hour, if you do forget, then reset your password, wait an hour, then try logging in again.
+After your first "reset" (actually just setting the password), all subsequent password reset processes take about an hour. So, if you do forget your first password, then reset your password a second time, wait an hour, then try logging in again.
 
 ### Enable Multi-Factor Authentication for Your NERSC Account (10 minutes)
 The tools we will be using at NERSC requires you user account to have multi-factor authentication (MFA) enabled. In this section of pre-work, you'll enable and test multi-factor authentication. You'll need your mobile phone for this pre-work, as it involves installing an app.
