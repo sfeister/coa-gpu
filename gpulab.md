@@ -96,7 +96,8 @@ The tools we will be using at NERSC requires you user account to have multi-fact
 You'll install an authenticator app on your phone, and use that app to get a unique "one-time password" (OTP), or "token", each time you login to NERSC. This token is in addition to your regular NERSC password.
 
 1. Open a new browser tab and follow the [official NERSC instructions to set up MFA](https://docs.nersc.gov/connect/mfa/).
-2. When you get to the section titled "Testing Your New Token", save a screenshot showing that you've been successful.
+2. You probably already have an authenticator app on your phone. If you already have an authenticator app on your phone, such as **Google Authenticator**, **Authy**, **Duo Mobile**, or **Microsoft Authenticator**, you can skip directly to [Creating and Installing a Token](https://docs.nersc.gov/connect/mfa/#creating-and-installing-a-token).
+3. When you get to the section titled "Testing Your New Token", save a screenshot showing that you've been successful.
 
 #### Submit: Evidence that MFA is Enabled (Due During Class Period)
 Submit a screenshot [showing a successful test of using your token](https://docs.nersc.gov/connect/mfa/#testing-your-new-token).
