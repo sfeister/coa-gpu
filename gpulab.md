@@ -80,7 +80,9 @@ You will complete the following pre-work in class, two weeks in advance of the l
 This week's pre-work requires that you already completed last week's pre-work. Once you receive an email saying your account has been created, you can continue with this week's pre-work.
 
 ### Activate Your NERSC Account (5 minutes)
-Several days after your initial application for a NERSC account (last week's pre-work), you will receive an email from NERSC saying that your account has been approved, and with instructions to activate your new account. Follow the link in your email to activate your NERSC account.
+Several days after your initial application for a NERSC account (last week's pre-work), you will receive an email from NERSC saying that your account has been approved, and with instructions to activate your new account. Follow the link in your email to "reset your password" for your NERSC account. Actually, this is the first time you will choose your password, so pick a new password and write it down.
+
+Choose a new password and write it down somewhere you'll remember. **Leave the "MFA" field blank** as you haven't set up MFA yet (you'll do that after setting your password.)
 
 **Note: Make Sure to Write Down your NERSC Password**
 The password reset process takes about an hour, if you do forget, then reset your password, wait an hour, then try logging in again.
