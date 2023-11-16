@@ -210,13 +210,15 @@ Learn More:
 
 ### (At-Home) Write and Submit: Reflection
 
-** Submit (Due the Day Before Lab): Brief Written Reflection on Videos **
+** Submit: Brief Written Reflection on Videos **
 
 Submit a brief reflection on what you just watched and read. What interested you? What surprised you? Elaborate.
 
-Share this reflection on Padlet with your class (TODO) prior to the lab period.
+Share this reflection [on Padlet with your class](https://cilearn.csuci.edu/courses/26078/assignments/543625) prior to the lab.
 
 ## (Laboratory Day-Of) Introduction
+
+Note: This section is only for in-person delivery of this lab. If you are working on this lab from home, skip past this section.
 
 Today's lab will begin with activities and lecture introducing you to the day. For your reference, here is an outline of this introductory session. You will be an active participant as we work through this agenda in class together!
 
@@ -404,9 +406,9 @@ You may wish to come back and follow these tutorials about CUDA on your own time
 
 </section>
 
-## Write CUDA Code that Prints "Hello, World!" messages from a GPU
+### Write CUDA Code that Prints "Hello, World!" messages from a GPU
 
-### This code will run on a single SM of the A100 GPU.
+#### This code will run on a single SM of the A100 GPU.
 
 1. From the JupyterHub File Browser, create a new file "hello1.cu" in your project folder. Note: the ".cu" extension is for CUDA code.
 2. From the JupyterHub File Browser, edit your new file "hello1.cu", just like you did to edit "hello.c". Copy the following CUDA code into your file and save it.
@@ -417,7 +419,7 @@ TODO: add CUDA code that goes here
 4. Compile your CUDA code with `nvcc hello1.cu -o hello1.o`.
 5. Run your CUDA program with `./hello1.o`. It should print out Hello, world from one of the SMs on your A100 GPU.
 
-### This code will run on all SMs of the A100 GPU.
+#### This code will run on all SMs of the A100 GPU.
 
 1. From the JupyterHub File Browser, create a new file "hello2.cu" in your project folder.
 2. From the JupyterHub File Browser, edit your new file "hello2.cu", just like you did to edit "hello1.cu". Copy the following CUDA code into your file and save it.
@@ -428,7 +430,7 @@ TODO: add CUDA code that goes here
 4. Compile your CUDA code with `nvcc hello2.cu -o hello2.o`.
 5. Run your CUDA program with `./hello2.o`. It should print out Hello, world from each of the SMs on your A100 GPU.
 
-### This code will run on every single thread of every single SMs of the A100 GPU.
+#### This code will run on every single thread of every single SMs of the A100 GPU.
 
 1. From the JupyterHub File Browser, create a new file "hello3.cu" in your project folder.
 2. From the JupyterHub File Browser, edit your new file "hello3.cu". Copy the following CUDA code into your file and save it.
