@@ -444,8 +444,8 @@ int main() {
 #include <stdio.h>
 
 __global__ void cuda_hello(){
-    int stride = blockDim.x;
-    printf("Hello World from GPU, for block %d!\n", stride);
+    int blockId = blockIdx.x;
+    printf("Hello World from GPU, for block %d!\n", blockId);
 }
 
 int main() {
