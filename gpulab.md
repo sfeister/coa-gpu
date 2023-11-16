@@ -470,9 +470,9 @@ Since the A100 has 108 SMs, we create 108 thread blocks - one for each SM. (We c
 #include <stdio.h>
 
 __global__ void cuda_hello(){
-    int index = threadIdx.x;
-    int stride = blockDim.x;
-    printf("Hello World from GPU, for thread %d of block %d!\n", index, stride);
+    int threadId = threadIdx.x;
+    int blockId = blockIdx.x;
+    printf("Hello World from GPU, for thread %d of block %d!\n", threadId, blockId);
 }
 
 int main() {
