@@ -309,6 +309,8 @@ You may need teacher help to follow along with these steps. I will lead you thro
 8. Paste the following contents into your file, edit it to change "Hello, world" to something more fun like "Hello, Scott!", and save your new file.
 
 ```c
+#include <stdio.h>
+
 void c_hello(){
     printf("Hello World!\n");
 }
@@ -442,7 +444,8 @@ int main() {
 #include <stdio.h>
 
 __global__ void cuda_hello(){
-    printf("Hello World from GPU!\n");
+    int stride = blockDim.x;
+    printf("Hello World from GPU, for block %d!\n", stride);
 }
 
 int main() {
@@ -467,7 +470,9 @@ Since the A100 has 108 SMs, we create 108 thread blocks - one for each SM. (We c
 #include <stdio.h>
 
 __global__ void cuda_hello(){
-    printf("Hello World from GPU!\n");
+    int index = threadIdx.x;
+    int stride = blockDim.x;
+    printf("Hello World from GPU, for thread %d of block %d!\n", index, stride);
 }
 
 int main() {
@@ -482,7 +487,7 @@ Since the A100 has 108 SMs, we create 108 thread blocks - one for each SM. (We c
 
 3. From the Linux Terminal, navigate back into your project folder and confirming your new file is there using `ls`.
 4. Compile your CUDA code with `nvcc hello3.cu -o hello3.o`.
-5. Run your CUDA program with `./hello3.o`. It should print out Hello, world from each of the SMs on your A100 GPU.
+5. Run your CUDA program with `./hello3.o`. It should print out Hello, world from each of the SMs (and SPs) on your A100 GPU.
 
 ## Submit: Evidence of Hello, World on Perlmutter GPU
 For teacher verification that you've completed this step, submit a screenshot that includes your final "Hello, world" CUDA code ("hello3.cu") terminal output, running on NERSC Perlmutter GPU. Since there's so much output from this program, it's ok to just include just the output that fits in your screenshot.
