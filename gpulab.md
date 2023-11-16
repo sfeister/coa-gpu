@@ -265,6 +265,8 @@ The following slides will walk you through getting connected in a step-by-step f
 5. From the Jupyter Hub Perlmutter landing page, under **"Shared GPU Node"**, press **"Start"**.
 6. After a short wait, you will arrive at a page that includes a "Launcher" tab. Keep this tab open for later.
 
+If you can't get a Shared GPU Job started due to a timeout, try again. If still no luck, you can just use a login node. This won't give you a dedicated A100, but you still will have the capability to run your code on the GPU.
+
 ### Launch "Terminal"
 7. From the "Launcher", scroll down all the way to the "Other" section, and select "Terminal". This will open a Linux terminal window, logged into Perlmutter.
 
@@ -413,7 +415,19 @@ You may wish to come back and follow these tutorials about CUDA on your own time
 1. From the JupyterHub File Browser, create a new file "hello1.cu" in your project folder. Note: the ".cu" extension is for CUDA code.
 2. From the JupyterHub File Browser, edit your new file "hello1.cu", just like you did to edit "hello.c". Copy the following CUDA code into your file and save it.
 
-TODO: add CUDA code that goes here
+```c
+#include <stdio.h>
+
+__global__ void cuda_hello(){
+    printf("Hello World from GPU!\n");
+}
+
+int main() {
+    cuda_hello<<<1,1>>>();
+    cudaDeviceSynchronize();
+    return 0;
+}
+```
 
 3. From the Linux Terminal, navigate back into your project folder and confirming your new file is there using `ls`.
 4. Compile your CUDA code with `nvcc hello1.cu -o hello1.o`.
@@ -424,7 +438,21 @@ TODO: add CUDA code that goes here
 1. From the JupyterHub File Browser, create a new file "hello2.cu" in your project folder.
 2. From the JupyterHub File Browser, edit your new file "hello2.cu", just like you did to edit "hello1.cu". Copy the following CUDA code into your file and save it.
 
-TODO: add CUDA code that goes here
+```c
+#include <stdio.h>
+
+__global__ void cuda_hello(){
+    printf("Hello World from GPU!\n");
+}
+
+int main() {
+    cuda_hello<<<108,1>>>();
+    cudaDeviceSynchronize();
+    return 0;
+}
+```
+
+Since the A100 has 108 SMs, we create 108 thread blocks - one for each SM. (We could create more if we wished, in which case the SMs would handle blocks in sequence.)
 
 3. From the Linux Terminal, navigate back into your project folder and confirming your new file is there using `ls`.
 4. Compile your CUDA code with `nvcc hello2.cu -o hello2.o`.
@@ -435,7 +463,22 @@ TODO: add CUDA code that goes here
 1. From the JupyterHub File Browser, create a new file "hello3.cu" in your project folder.
 2. From the JupyterHub File Browser, edit your new file "hello3.cu". Copy the following CUDA code into your file and save it.
 
-TODO: add CUDA code that goes here
+```c
+#include <stdio.h>
+
+__global__ void cuda_hello(){
+    printf("Hello World from GPU!\n");
+}
+
+int main() {
+    cuda_hello<<<108,64>>>();
+    cudaDeviceSynchronize();
+    return 0;
+}
+```
+
+Since the A100 has 108 SMs, we create 108 thread blocks - one for each SM. (We could create more if we wished, in which case the SMs would handle blocks in sequence.) Since each SM of the A100 has 64 SPs (processors), we give each thread block 64 threads so we can take full advantage of all SPs on all SMs.
+ 
 
 3. From the Linux Terminal, navigate back into your project folder and confirming your new file is there using `ls`.
 4. Compile your CUDA code with `nvcc hello3.cu -o hello3.o`.
