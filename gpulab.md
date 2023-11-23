@@ -492,14 +492,14 @@ Since the A100 has 108 SMs, we create 108 thread blocks - one for each SM. (We c
 ## Submit: Evidence of Hello, World on Perlmutter GPU
 For teacher verification that you've completed this step, submit a screenshot that includes your final "Hello, world" CUDA code ("hello3.cu") terminal output, running on NERSC Perlmutter GPU. Since there's so much output from this program, it's ok to just include just the output that fits in your screenshot.
 
-## Create an Algorithm (Incomplete - work on this starting Nov 18)
+## Create an Algorithm (Incomplete - work on this starting Nov 27)
 
 ### Activity Overview
 
 a.	Create a simple algorithm for encrypting data
 b.	Activity in C – write an encryption and decryption
 
-### Lecture: How do you move something onto a GPU? (Incomplete - work on this starting Nov 18)
+### Lecture: How do you move something onto a GPU? (Incomplete - work on this starting Nov 27)
 
 a.	Show off a diagram of how we pull it in, send it back out data-wise
 i.	Discussion activity: Why do we do this?
@@ -507,20 +507,20 @@ b.	Show them my encryption
 i.	Show them how I move it to the GPU
 c.	Check that the results are still the same as they were
 
-### Write and Run Your Algorithm on the CPU (Incomplete - work on this starting Nov 18)
+### Write and Run Your Algorithm on the CPU (Incomplete - work on this starting Nov 27)
 
-### Move Your Algorithm onto GPU (Incomplete - work on this starting Nov 18)
+### Move Your Algorithm onto GPU (Incomplete - work on this starting Nov 27)
 
 1. Open a shared GPU node
 TODO
 
-### Run Benchmarks on the CPU vs. GPU implementations (Incomplete - work on this starting Nov 18)
+### Run Benchmarks on the CPU vs. GPU implementations (Incomplete - work on this starting Nov 27)
 Run benchmarks (Holy cow! Computation took almost no time, and data took so much time)
 
-## Increase Algorithm Computation Load and Re-Run Benchmarks (Incomplete - work on this starting Nov 18)
+## Increase Algorithm Computation Load and Re-Run Benchmarks (Incomplete - work on this starting Nov 27)
 Make their encryption more elaborate, run again and re-benchmark
 
-## End-of-Class Discussion and Reflection (Incomplete - work on this starting Nov 18)
+## End-of-Class Discussion and Reflection (Incomplete - work on this starting Nov 27)
 
 ### Shared memory discussion (in-class only)
 
