@@ -17,8 +17,8 @@ comment:  Scientific Visualization for COMP 566: Geometry and Computer Graphics
 
 # Scientific Visualization Laboratory
 
-## Pre-Work (Three Weeks in Advance)
-You will complete the following pre-work  three weeks in advance of the lab day.
+## Pre-Work (A Week or More in Advance)
+You will complete the following pre-work in advance of the lab day.
 
 
 ### Apply for a NERSC Account (15 minutes)
@@ -260,8 +260,8 @@ int main() {
 9. From JupyterHub, launch a new Terminal tab. That is, create a new Launcher tab, then scroll down and select "Terminal". This will give you access to a private Linux Terminal, from your web browser, running on one of the login servers (login nodes) of the NERSC Perlmutter supercomputer.
 10. You start in the Linux Terminal in your "Home" folder, which is represented by a tilde (~). From the Linux Terminal, navigate to your project folder.
 11. You'll use the `ls` command you learned earlier to see what's in the current folder. Try it out now.
-12. You'll see the `cd` command to navigate into your project folder. For example, if using `ls` you see your project folder called "GPULab", then navigate into that folder by typing `cd GPULab`.
-13. Confirm you are in your project folder by examining the path to left of your cursor. It should now show `~/GPULab`.
+12. You'll see the `cd` command to navigate into your project folder. For example, if using `ls` you see your project folder called "COMP566", then navigate into that folder by typing `cd COMP566`.
+13. Confirm you are in your project folder by examining the path to left of your cursor. It should now show `~/COMP566`.
 14. Confirm that your file, "hello.c" is in your project folder, by typing `ls`. You should see "hello.c" listed.
 15. Confirm the contents of your file are as you desired, by typing `cat hello.c`, which will display the contents of your file within the Linux Terminal.
 
