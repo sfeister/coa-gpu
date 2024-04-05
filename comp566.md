@@ -35,7 +35,7 @@ NERSC representatives have assured me this user vetting is lighter than a typica
 <section>
 
 #### Step-by-Step: Apply for a NERSC Account
-Here's how students enrolled in COMP 262 at CSUCI can sign up for an account at NERSC:
+Here's how students enrolled in COMP 566 at CSUCI can sign up for an account at NERSC:
 
 1. Navigate to [NERSC Add User](https://iris.nersc.gov/add-user)
 2. Select "I need a new NERSC account"
